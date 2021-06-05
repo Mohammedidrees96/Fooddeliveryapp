@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="assets/vendor/fontawesome/css/solid.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link href="assets/vendor/fontawesome/css/brands.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/master.css" rel="stylesheet">
+    <link href="assets/vendor/chartsjs/Chart.min.css" rel="stylesheet">
+    <link href="assets/vendor/flagiconcss/css/flag-icon.min.css" rel="stylesheet">
+    <style>
+    table, th, td {
+    border: 0px solid #293C4F;
+}
+.test td{font-size: 18px; padding-bottom:20px; color: #000;}
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav id="sidebar" >
+            <div class="sidebar-header">
+                <img src="assets/img/logo.png" alt="bootraper logo" class="app-logo"  width="130px">
+            </div>
+            <ul class="list-unstyled components text-secondary">
+                 <li>
+                    <a href="dashboard.html"><i class="fas fa-chart-line"></i> My Dashboard</a>
+                 </li>
+                 <li>
+                    <a href="OrderHistory.html"><i class="fas fa-luggage-cart"></i> Order History</a>
+                 </li>
+                 <li>
+                    <a href="placeorder.html"><i class="fas fa-cart-plus"></i> Place New Order</a>
+                 </li>
+                 <li>
+                    <a href="DeliveryInfo.html"><i class="fas fa-truck"></i> Delivery Info</a>
+                 </li>
+                 <li>
+                    <a href="Invoices.html"><i class="fas fa-file-invoice"></i> My Invoices</a>
+                 </li>
+                 <li>
+                    <a href="PaymentReceipt.html"><i class="fas fa-money-bill-alt"></i> Payment Reciept</a>
+                 </li>
+
+            </ul>
+        </nav>
+        <div id="body" class="active">
+            <nav class="navbar navbar-expand-lg navbar-white bggreen">
+                <button type="button" id="sidebarCollapse" class="btn "><i class="fas fa-bars"></i><span></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ml-auto">
+                      <li class="nav-item dropdown">
+                         <div class="nav-dropdown rd" >
+                            <a href="" style="padding:0px !important;" class="nav-item nav-link dropdown-toggle text-secondary" data-toggle="dropdown"><img src='assets/img/user.png' style="width:100%;  height:auto;" /> </a>
+                         </div>
+                      </li>
+                        <li class="nav-item dropdown">
+                            <div class="nav-dropdown">
+                                <a href="" class="nav-item nav-link dropdown-toggle text-secondary" data-toggle="dropdown"><span>Welcome Admin</span> <i style="font-size: .8em;" class="fas fa-caret-down"></i></a>
+                                <div class="dropdown-menu dropdown-menu-right nav-link-menu">
+                                    <ul class="nav-list">
+                                        <li><a href="edit-profile.html" class="dropdown-item"><i class="fas fa-address-card"></i> My Profile</a></li>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-envelope"></i> My Location</a></li>
+                                        <div class="dropdown-divider"></div>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+       <div class="content">
+           <div class="container p-2">
+             <div class="card">
+                 <div class="card-head bground" style="background: #2fbb9c;">
+                <div class="row px-5 pt-3">
+                    <div class="col-md-7">
+                        <div class='row'>
+                            <div class="col-md-5">
+                              <div class="form-group row">
+                                  <label for="product_sku" class="col-sm-5 col-form-label" style="color:#fff;">Order No</label>
+                                  <div class="col-sm-7">
+                                    <input type="text" class="form-control" name="product_sku" value="001026" required>
+                                  </div>
+                              </div>
+
+                            </div>
+                            <div class="col-md-7">
+                              <div class="form-group row">
+                                  <label for="product_sku" class="col-sm-4 col-form-label" style="color:#fff;">Order Date</label>
+                                  <div class="col-sm-8">
+                                    <input type="date" class="form-control" name="product_sku" value="26-02-2021" required>
+                                  </div>
+                              </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                      <div class="form-group row">
+                          <label for="product_sku" class="col-sm-4 col-form-label" style="color:#fff;">Invoice Date</label>
+                          <div class="col-sm-7">
+                            <input type="date" class="form-control" name="product_sku" value="26-02-2021" required>
+                          </div>
+                          <div class="col-sm-2">
+                            </div>
+                      </div>
+                      <div class="form-group row">
+                          <label for="product_sku" class="col-sm-4 col-form-label" style="color:#fff;">Invoice No</label>
+                          <div class="col-sm-7">
+                            <input type="text" class="form-control" name="product_sku" value="001026" required>
+                          </div>
+                          <div class="col-sm-2">
+                            </div>
+                      </div>
+
+                    </div>
+                </div>
+                 </div>
+             </div>
+<div style="border: 2px solid #293C4F; padding:20px;">
+           <div class="row" style="background:#fff; padding-bottom:50px;">
+             <div class="col-sm-4"><div class="form-group">
+      <label class="control-label col-sm-2" for="email" style="color:#000; font-weight:bold;">Location:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="email" placeholder="" name="" value="Location no:1">
+      </div>
+    </div></div>
+             <div class="col-sm-4"><div class="form-group">
+      <label class="control-label col-sm-2" for="email" style="color:#000; font-weight:bold;">Address:</label>
+      <div class="col-sm-10">
+        <textarea class="form-control">Address Details</textarea>
+      </div>
+    </div></div>
+             <div class="col-sm-4"><div class="form-group">
+      <label class="control-label col-sm-2" for="email" style="color:#000; font-weight:bold;">Remarks:</label>
+      <div class="col-sm-10">
+        <textarea class="form-control"></textarea>
+      </div>
+    </div></div>
+            </div>
+
+           <div class="row" style="background:#fff;">
+               <div class="col-md-12">
+                 <table class="table table-striped">
+                     <thead class="thead-dark">
+                         <tr>
+                           <th style="width:15%;">Product</th>
+                           <th style="width:30%;">Description</th>
+                           <th style="width:15%;">Unit Price</th>
+                           <th style="width:15%;">Quantity</th>
+                           <th style="width:15%;">Total</th>
+                         </tr>
+
+                       </thead>
+                       <tbody  style="padding-bottom:50px;">
+                         <tr>
+                      <td colspan="5" height='50'></td>
+                         </tr>
+                         <tr>
+                           <td><img src="assets/img/homelogo.png" style="max-height:50px;" /></td>
+                           <td><p style="font-family:calibri; font-size:16px;"><b>Product Name</b><br>If you haven't seen Game of Thrones, go watch it right now.</p></td>
+                           <td>$200</td>
+                               <td>20</td>
+                               <td>$200</td>
+
+                         </tr>
+                         <tr>
+                           <td><img src="assets/img/homelogo.png" style="max-height:50px;" /></td>
+                           <td><p style="font-family:calibri; font-size:16px;"><b>Product Name</b><br>If you haven't seen Game of Thrones, go watch it right now.</p></td>
+                           <td>$200</td>
+
+                               <td>20</td>
+                               <td>$200</td>
+
+                         </tr>
+                         <tr>
+                           <td><img src="assets/img/homelogo.png" style="max-height:50px;" /></td>
+                           <td><p style="font-family:calibri; font-size:16px;"><b>Product Name</b><br>If you haven't seen Game of Thrones, go watch it right now.</p></td>
+                           <td>$200</td>
+                               <td>20</td>
+                               <td>$200</td>
+
+                         </tr>
+                         <tr>
+                           <td><img src="assets/img/homelogo.png" style="max-height:50px;" /></td>
+                           <td><p style="font-family:calibri; font-size:16px;"><b>Product Name</b><br>If you haven't seen Game of Thrones, go watch it right now.</p></td>
+                           <td>$200</td>
+                               <td>20</td>
+                               <td>$200</td>
+
+                         </tr>
+                         <tr>
+                           <td><img src="assets/img/homelogo.png" style="max-height:50px;" /></td>
+                           <td><p style="font-family:calibri; font-size:16px;"><b>Product Name</b><br>If you haven't seen Game of Thrones, go watch it right now.</p></td>
+                           <td>$200</td>
+                               <td>20</td>
+                               <td>$200</td>
+
+                         </tr>
+                         <tr>
+                           <td><img src="assets/img/homelogo.png" style="max-height:50px;" /></td>
+                           <td><p style="font-family:calibri; font-size:16px;"><b>Product Name</b><br>If you haven't seen Game of Thrones, go watch it right now.</p></td>
+                           <td>$200</td>
+                               <td>20</td>
+                               <td>$200</td>
+
+                         </tr>
+                         <tr>
+                           <td><img src="assets/img/homelogo.png" style="max-height:50px;" /></td>
+                           <td><p style="font-family:calibri; font-size:16px;"><b>Product Name</b><br>If you haven't seen Game of Thrones, go watch it right now.</p></td>
+                           <td>$200</td>
+                               <td>20</td>
+                               <td>$200</td>
+
+                         </tr>
+                         <tr>
+                           <td><img src="assets/img/homelogo.png" style="max-height:50px;" /></td>
+                           <td><p style="font-family:calibri; font-size:16px;"><b>Product Name</b><br>If you haven't seen Game of Thrones, go watch it right now.</p></td>
+                           <td>$200</td>
+                               <td>20</td>
+                               <td>$200</td>
+
+                         </tr>
+                         <tr>
+                           <td><img src="assets/img/homelogo.png" style="max-height:50px;" /></td>
+                           <td><p style="font-family:calibri; font-size:16px;"><b>Product Name</b><br>If you haven't seen Game of Thrones, go watch it right now.</p></td>
+                           <td>$200</td>
+                               <td>20</td>
+                               <td>$200</td>
+
+                         </tr>
+                         <tr>
+                           <td><img src="assets/img/homelogo.png" style="max-height:50px;" /></td>
+                           <td><p style="font-family:calibri; font-size:16px;"><b>Product Name</b><br>If you haven't seen Game of Thrones, go watch it right now.</p></td>
+                           <td>$200</td>
+                               <td>20</td>
+                               <td>$200</td>
+
+                         </tr>
+
+
+
+
+
+                       </tbody>
+                     </table>
+
+
+                     <div class="row" style="border-top: 2px solid #b4cce6;padding-top: 20px;">
+                        <div class="col-sm-2" style="margin-top: 30px;">
+                        <a href="Invoices.html" class="btn btn-primary" style="display: block;background:#293c4f; border:1px solid #293c4f;">Back</a></div>
+                        <div class="col-sm-9">
+                          <table align='right' class="test" style="font-size:30px;">
+                            <tr>
+                               <td>Sub Total: </td>
+                               <td>$140</td>
+                             </tr>
+                              <tr>
+                               <td>Tax:</td>
+                               <td>$7</td>
+
+                                </tr>
+                                 <tr>
+                               <td>Net Total:</td>
+                               <td>$147</td>
+
+ </tr>
+                            </tr>
+                          </table>
+                        </div>
+                        <div class="col-sm-1"></div>
+
+
+                     </div>
+
+               </div>
+           </div>
+         </div>
+
+           </div>
+       </div>
+        </div>
+    </div>
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chartsjs/Chart.min.js"></script>
+    <script src="assets/js/charts.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            // this will get the full URL at the address bar
+            var url = window.location.href;
+
+            // passes on every "a" tag
+            $("#sidebar a").each(function() {
+                // checks if its the same on the address bar
+                if (url == (this.href)) {
+                    $(this).closest("li").addClass("active1");
+                    //for making parent of submenu active
+                   $(this).closest("li").parent().parent().addClass("active1");
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

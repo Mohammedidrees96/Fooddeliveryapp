@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="assets/vendor/fontawesome/css/solid.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link href="assets/vendor/fontawesome/css/brands.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/order.css" rel="stylesheet">
+    <link href="assets/vendor/chartsjs/Chart.min.css" rel="stylesheet">
+    <link href="assets/vendor/flagiconcss/css/flag-icon.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="jquery.datetimepicker.css"/>
+</head>
+<style>
+    .dropdown.show.dropdown-menu.show{
+        position: absolute;
+    transform: translate3d(-43px, -84px, 0px) !important;
+    top: 0px;
+    left: 0px;
+    will-change: transform;
+    }
+</style>
+<style>
+.nav-dropdown .nav-link-menu{ margin-top: 0px !important;}.ico3{height: 25px !important; width: auto !important;}
+</style>
+
+<body>
+    <div class="wrapper">
+        <nav id="sidebar" >
+            <div class="sidebar-header">
+                <img src="assets/img/logo.png" alt="bootraper logo" class="app-logo"  width="130px">
+            </div>
+            <ul class="list-unstyled components text-secondary">
+                 <li>
+                    <a href="dashboard.html"><i class="fas fa-chart-line"></i> My Dashboard</a>
+                 </li>
+                 <li>
+                    <a href="OrderHistory.html"><i class="fas fa-luggage-cart"></i> Order History</a>
+                 </li>
+                 <li>
+                    <a href="placeorder.html"><i class="fas fa-cart-plus"></i> Place New Order</a>
+                 </li>
+                 <li>
+                    <a href="DeliveryInfo.html"><i class="fas fa-truck"></i> Delivery Info</a>
+                 </li>
+                 <li>
+                    <a href="Invoices.html"><i class="fas fa-file-invoice"></i> My Invoices</a>
+                 </li>
+                 <li>
+                    <a href="PaymentReceipt.html"><i class="fas fa-money-bill-alt"></i> Payment Reciept</a>
+                 </li>
+
+            </ul>
+        </nav>
+        <div id="body" class="active">
+            <nav class="navbar navbar-expand-lg navbar-white bggreen">
+                <button type="button" id="sidebarCollapse" class="btn "><i class="fas fa-bars"></i><span></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ml-auto">
+                      <li class="nav-item dropdown">
+                         <div class="nav-dropdown rd" >
+                            <a href="" style="padding:0px !important;" class="nav-item nav-link dropdown-toggle text-secondary" data-toggle="dropdown"><img src='assets/img/user.png' style="width:100%;  height:auto;" /> </a>
+                         </div>
+                      </li>
+                        <li class="nav-item dropdown">
+                            <div class="nav-dropdown">
+                                <a href="" class="nav-item nav-link dropdown-toggle text-secondary" data-toggle="dropdown"><span>Welcome Admin</span> <i style="font-size: .8em;" class="fas fa-caret-down"></i></a>
+                                <div class="dropdown-menu dropdown-menu-right nav-link-menu">
+                                    <ul class="nav-list">
+                                        <li><a href="edit-profile.html" class="dropdown-item"><i class="fas fa-address-card"></i> My Profile</a></li>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-envelope"></i> My Location</a></li>
+
+                                        <div class="dropdown-divider"></div>
+                                        <li><a href="" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 text-left">
+                            <div class="row align-items-baseline">
+                                <div class="col-md-2">
+
+                                  <div id="navbar" class="nav-dropdown">
+                                    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+                                      <ul class="nav navbar-nav">
+                                        <li class="dropdown">
+                                          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span><img src="assets/img/filtericon.png"  width="20px" height="20px"/></span> <i style="font-size: .8em;" class="fas fa-caret-down"></i></a>
+                                          <div style="left: -40px;top: 20px;margin-top: -15px;" class="dropdown-menu dropdown-menu2 dropdown-menu-right nav-link-menu p-4">
+                                             <label>By Date</label>
+                                             <form>
+                                                <div class=" d-flex justify-content-between align-items-baseline">
+                                                   <label>From</label>
+                                                   <div class="form-group">
+                                                      <input type="date" class="form-control w-100" id="startDate" >
+                                                   </div>
+                                                   <div>
+                                                   </div>
+                                                </div>
+                                                <div class=" d-flex justify-content-between align-items-baseline">
+                                                   <label>To</label>
+                                                   <div class="form-group">
+                                                      <input type="date" class="form-control w-100 ml-3" id="endDate">
+                                                   </div>
+                                                   <div>
+                                                   </div>
+                                                </div>
+                                                <label>By Location:</label>
+                                                <div class="row align-items-baseline">
+                                                   <div class="col-md-2"><label>Location</label></div>
+                                                   <div class="col-md-8 text-left">
+                                                      <div class="form-group">
+                                                         <select class="form-control" id="locationsel" class="w-100">
+                                                            <option>Ascending order</option>
+                                                            <option>Descending order</option>
+                                                         </select>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                                <div class="text-center"><button class="btn btn-success">Filter</button></div>
+                                             </form>
+                                          </div>
+                                        </li>
+                                      </ul>
+                                    </nav>
+                                  </div>
+                                </div>
+                                <div class="col-md-10">
+                                    <form>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control w-50" placeholder="search for Invoice" > </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <div class="row align-items-baseline pt-2">
+                                <div class="col-md-8 text-right"><img src="assets/img/print.jpeg" width="20px" height="20px"/> Print
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin:50px auto;">
+                        <div class="col-md-12">
+                          <table class="table">
+                              <thead class="thead-dark">
+                                  <tr>
+                                      <th><input type="checkbox"/></th>
+                                      <th>Invoice No</th>
+                                      <th>Invoice Date</th>
+                                    <th>Order Id</th>
+                                    <th>Ordered Date</th>
+                                    <th style="width: 200px;">Delivery Location</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td><input type="checkbox"/></td>
+                                    <td>200160</td>
+                                    <td>21-feb-2021</td>
+                                    <td>100657</td>
+                                    <td>21-feb-2021</td>
+                                    <td>FOOD COURT PRIVATE LIMITED
+                                        AD DAWSARI,AL ANDALUS,
+                                        CHENNAI 600 041, INDIA</td>
+                                        <td>$200</td>
+                                        <td>In-progress</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <p type="button" class=" dropdown-toggle" data-toggle="dropdown">
+                                                 <span><img src="assets/img/three-vertical-dots-icon-1.jpg" class='ico3' /></span>
+                                                </p>
+                                                <div class="dropdown-menu">
+                                                  <a class="dropdown-item" href="InvoiceDetails.html">Invoice Details</a>
+                                                  <a class="dropdown-item" href="#">Download Invoice</a>
+
+                                                </div>
+                                              </div>
+                                        </td>
+                                  </tr>
+                                  <tr>
+                                    <td><input type="checkbox"/></td>
+                                    <td>200160</td>
+                                    <td>21-feb-2021</td>
+                                    <td>100657</td>
+                                    <td>21-feb-2021</td>
+                                    <td>FOOD COURT PRIVATE LIMITED
+                                        AD DAWSARI,AL ANDALUS,
+                                        CHENNAI 600 041, INDIA</td>
+                                        <td>$200</td>
+                                        <td>In-progress</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <p type="button" class=" dropdown-toggle" data-toggle="dropdown">
+                                                 <span><img src="assets/img/three-vertical-dots-icon-1.jpg" class='ico3' /></span>
+                                                </p>
+                                                <div class="dropdown-menu">
+                                                  <a class="dropdown-item" href="InvoiceDetails.html">Invoice Details</a>
+                                                  <a class="dropdown-item" href="#">Download Invoice</a>
+
+                                                </div>
+                                              </div>
+                                        </td>
+                                  </tr><tr>
+                                    <td><input type="checkbox"/></td>
+                                    <td>200160</td>
+                                    <td>21-feb-2021</td>
+                                    <td>100657</td>
+                                    <td>21-feb-2021</td>
+                                    <td>FOOD COURT PRIVATE LIMITED
+                                        AD DAWSARI,AL ANDALUS,
+                                        CHENNAI 600 041, INDIA</td>
+                                        <td>$200</td>
+                                        <td>In-progress</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <p type="button" class=" dropdown-toggle" data-toggle="dropdown">
+                                                 <span><img src="assets/img/three-vertical-dots-icon-1.jpg" class='ico3' /></span>
+                                                </p>
+                                                <div class="dropdown-menu">
+                                                  <a class="dropdown-item" href="InvoiceDetails.html">Invoice Details</a>
+                                                  <a class="dropdown-item" href="#">Download Invoice</a>
+
+                                                </div>
+                                              </div>
+                                        </td>
+                                  </tr>
+                                  <tr>
+                                    <td><input type="checkbox"/></td>
+                                    <td>200160</td>
+                                    <td>21-feb-2021</td>
+                                    <td>100657</td>
+                                    <td>21-feb-2021</td>
+                                    <td>FOOD COURT PRIVATE LIMITED
+                                        AD DAWSARI,AL ANDALUS,
+                                        CHENNAI 600 041, INDIA</td>
+                                        <td>$200</td>
+                                        <td>In-progress</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <p type="button" class=" dropdown-toggle" data-toggle="dropdown">
+                                                 <span><img src="assets/img/three-vertical-dots-icon-1.jpg" class='ico3' /></span>
+                                                </p>
+                                                <div class="dropdown-menu">
+                                                  <a class="dropdown-item" href="InvoiceDetails.html">Invoice Details</a>
+                                                  <a class="dropdown-item" href="#">Download Invoice</a>
+
+                                                </div>
+                                              </div>
+                                        </td>
+                                  </tr>
+                                  <tr>
+                                    <td><input type="checkbox"/></td>
+                                    <td>200160</td>
+                                    <td>21-feb-2021</td>
+                                    <td>100657</td>
+                                    <td>21-feb-2021</td>
+                                    <td>FOOD COURT PRIVATE LIMITED
+                                        AD DAWSARI,AL ANDALUS,
+                                        CHENNAI 600 041, INDIA</td>
+                                        <td>$200</td>
+                                        <td>In-progress</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <p type="button" class=" dropdown-toggle" data-toggle="dropdown">
+                                                 <span><img src="assets/img/three-vertical-dots-icon-1.jpg" class='ico3' /></span>
+                                                </p>
+                                                <div class="dropdown-menu">
+                                                  <a class="dropdown-item" href="InvoiceDetails.html">Invoice Details</a>
+                                                  <a class="dropdown-item" href="#">Download Invoice</a>
+
+                                                </div>
+                                              </div>
+                                        </td>
+                                  </tr>
+                                  <tr>
+                                    <td><input type="checkbox"/></td>
+                                    <td>200160</td>
+                                    <td>21-feb-2021</td>
+                                    <td>100657</td>
+                                    <td>21-feb-2021</td>
+                                    <td>FOOD COURT PRIVATE LIMITED
+                                        AD DAWSARI,AL ANDALUS,
+                                        CHENNAI 600 041, INDIA</td>
+                                        <td>$200</td>
+                                        <td>In-progress</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <p type="button" class=" dropdown-toggle" data-toggle="dropdown">
+                                                 <span><img src="assets/img/three-vertical-dots-icon-1.jpg" class='ico3' /></span>
+                                                </p>
+                                                <div class="dropdown-menu">
+                                                  <a class="dropdown-item" href="InvoiceDetails.html">Invoice Details</a>
+                                                  <a class="dropdown-item" href="#">Download Invoice</a>
+
+                                                </div>
+                                              </div>
+                                        </td>
+                                  </tr>
+                                  <tr>
+                                    <td><input type="checkbox"/></td>
+                                    <td>200160</td>
+                                    <td>21-feb-2021</td>
+                                    <td>100657</td>
+                                    <td>21-feb-2021</td>
+                                    <td>FOOD COURT PRIVATE LIMITED
+                                        AD DAWSARI,AL ANDALUS,
+                                        CHENNAI 600 041, INDIA</td>
+                                        <td>$200</td>
+                                        <td>In-progress</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <p type="button" class=" dropdown-toggle" data-toggle="dropdown">
+                                                 <span><img src="assets/img/three-vertical-dots-icon-1.jpg" class='ico3' /></span>
+                                                </p>
+                                                <div class="dropdown-menu">
+                                                  <a class="dropdown-item" href="InvoiceDetails.html">Invoice Details</a>
+                                                  <a class="dropdown-item" href="#">Download Invoice</a>
+
+                                                </div>
+                                              </div>
+                                        </td>
+                                  </tr>
+                                  <tr>
+                                    <td><input type="checkbox"/></td>
+                                    <td>200160</td>
+                                    <td>21-feb-2021</td>
+                                    <td>100657</td>
+                                    <td>21-feb-2021</td>
+                                    <td>FOOD COURT PRIVATE LIMITED
+                                        AD DAWSARI,AL ANDALUS,
+                                        CHENNAI 600 041, INDIA</td>
+                                        <td>$200</td>
+                                        <td>In-progress</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <p type="button" class=" dropdown-toggle" data-toggle="dropdown">
+                                                 <span><img src="assets/img/three-vertical-dots-icon-1.jpg" class='ico3' /></span>
+                                                </p>
+                                                <div class="dropdown-menu">
+                                                  <a class="dropdown-item" href="InvoiceDetails.html">Invoice Details</a>
+                                                  <a class="dropdown-item" href="#">Download Invoice</a>
+
+                                                </div>
+                                              </div>
+                                        </td>
+                                  </tr>
+                                  <tr>
+                                    <td><input type="checkbox"/></td>
+                                    <td>200160</td>
+                                    <td>21-feb-2021</td>
+                                    <td>100657</td>
+                                    <td>21-feb-2021</td>
+                                    <td>FOOD COURT PRIVATE LIMITED
+                                        AD DAWSARI,AL ANDALUS,
+                                        CHENNAI 600 041, INDIA</td>
+                                        <td>$200</td>
+                                        <td>In-progress</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <p type="button" class=" dropdown-toggle" data-toggle="dropdown">
+                                                 <span><img src="assets/img/three-vertical-dots-icon-1.jpg" class='ico3' /></span>
+                                                </p>
+                                                <div class="dropdown-menu">
+                                                  <a class="dropdown-item" href="InvoiceDetails.html">Invoice Details</a>
+                                                  <a class="dropdown-item" href="#">Download Invoice</a>
+
+                                                </div>
+                                              </div>
+                                        </td>
+                                  </tr>
+                                  <tr>
+                                    <td><input type="checkbox"/></td>
+                                    <td>200160</td>
+                                    <td>21-feb-2021</td>
+                                    <td>100657</td>
+                                    <td>21-feb-2021</td>
+                                    <td>FOOD COURT PRIVATE LIMITED
+                                        AD DAWSARI,AL ANDALUS,
+                                        CHENNAI 600 041, INDIA</td>
+                                        <td>$200</td>
+                                        <td>In-progress</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <p type="button" class=" dropdown-toggle" data-toggle="dropdown">
+                                                 <span><img src="assets/img/three-vertical-dots-icon-1.jpg" class='ico3' /></span>
+                                                </p>
+                                                <div class="dropdown-menu">
+                                                  <a class="dropdown-item" href="InvoiceDetails.html">Invoice Details</a>
+                                                  <a class="dropdown-item" href="#">Download Invoice</a>
+
+                                                </div>
+                                              </div>
+                                        </td>
+                                  </tr>
+
+                                </tbody>
+                              </table>
+
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+
+        </div>
+    </div>
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="jquery.datetimepicker.js"></script>
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chartsjs/Chart.min.js"></script>
+    <script src="assets/js/charts.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            // this will get the full URL at the address bar
+            var url = window.location.href;
+            console.log(url);
+
+            // passes on every "a" tag
+            $("#sidebar a").each(function() {
+                // checks if its the same on the address bar
+
+
+                if (url == (this.href)) {
+                    console.log(this.href);
+                    $(this).closest("li").addClass("active1");
+                    //for making parent of submenu active
+                   $(this).closest("li").parent().parent().addClass("active1");
+                }
+            });
+        });
+        $('#startDate').datetimepicker({
+inline:true,
+});
+    </script>
+
+</body>
+
+</html>

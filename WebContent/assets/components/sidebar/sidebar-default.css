@@ -1,0 +1,115 @@
+/*------------------------------------------------------------------
+* Bootstrap Simple Admin Template
+* Version: 2.1
+* Author: Alexis Luna
+* Website: https://github.com/alexis-luna/bootstrap-simple-admin-template
+-------------------------------------------------------------------*/
+#sidebar {
+    min-width: 220px;
+    max-width: 220px;
+    background: #293c4f;
+    color: #fff;
+    transition: all 0.3s;
+    border-right: 1px solid #e6ecf5;
+
+}
+body{
+font-family: 'DM Serif Text', serif;
+}
+table tr td{
+font-size:12px;
+}
+.rounded input{
+    border: none;
+    outline: none;
+border-top-right-radius:0px !important;
+border-bottom-right-radius:0px !important;
+}
+.rounded input:focus{
+box-shadow:none;
+}
+.borbot {
+    border-bottom: 1px solid #2FBB9C;
+}
+.borbot p{
+font-size:12px;
+}
+span#search-addon{
+background:#fff;
+border-top-left-radius:0px !important;
+border-bottom-left-radius:0px !important;
+}
+#sidebar.active {
+margin-left:-250px;
+display: none;
+}
+
+#sidebar .sidebar-header {
+    padding: .4rem 1rem;
+    border-bottom: 1px solid rgba(101, 109, 119, .16);
+    max-height: 80px;
+text-align:center;
+}
+
+#sidebar ul.components {
+    padding: 0 0;
+margin-top:30px;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: .8rem 0.8rem;
+    font-size: 1rem;
+    display: block;
+color:#fff;
+}
+
+#sidebar ul li a .fas {
+    min-width: 20px;
+    margin-right: 5px;
+    text-align: center;
+}
+
+#sidebar ul li a:hover,
+#sidebar ul li a.active {
+    color: #fff;
+    background: #2fbb9c;
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: inherit;
+}
+
+#sidebar ul ul a {
+    font-size: 1rem;
+    background: #EEEEEE;
+}
+
+#sidebar a[data-toggle="collapse"] {
+    position: relative;
+}
+
+#sidebar .dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+#sidebar ul li.active1 a, #sidebar ul li a:hover {
+    text-decoration:none;
+    color:#fff;
+    background:#2FBB9C;
+}

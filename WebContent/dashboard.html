@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link href="assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+      <link href="assets/vendor/fontawesome/css/solid.min.css" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+      <link href="assets/vendor/fontawesome/css/brands.min.css" rel="stylesheet">
+      <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="assets/css/master.css" rel="stylesheet">
+      <link href="assets/vendor/chartsjs/Chart.min.css" rel="stylesheet">
+      <link href="assets/vendor/flagiconcss/css/flag-icon.min.css" rel="stylesheet">
+   </head>
+   <body>
+      <div class="wrapper">
+         <nav id="sidebar" >
+            <div class="sidebar-header">
+               <img src="assets/img/logo.png" alt="bootraper logo" class="app-logo"  width="130px">
+            </div>
+            <ul class="list-unstyled components text-secondary">
+               <li>
+                  <a href="dashboard.html"><i class="fas fa-chart-line"></i> My Dashboard</a>
+               </li>
+               <li>
+                  <a href="OrderHistory.html"><i class="fas fa-luggage-cart"></i> Order History</a>
+               </li>
+               <li>
+                  <a href="placeorder.html"><i class="fas fa-cart-plus"></i> Place New Order</a>
+               </li>
+               <li>
+                  <a href="DeliveryInfo.html"><i class="fas fa-truck"></i> Delivery Info</a>
+               </li>
+               <li>
+                  <a href="Invoices.html"><i class="fas fa-file-invoice"></i> My Invoices</a>
+               </li>
+               <li>
+                  <a href="PaymentReceipt.html"><i class="fas fa-money-bill-alt"></i> Payment Reciept</a>
+               </li>
+            </ul>
+         </nav>
+         <div id="body" class="active">
+            <nav class="navbar navbar-expand-lg navbar-white bggreen">
+               <button type="button" id="sidebarCollapse" class="btn "><i class="fas fa-bars"></i><span></span></button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="nav navbar-nav ml-auto">
+                     <li class="nav-item dropdown">
+                        <div class="nav-dropdown rd" >
+                           <a href="" style="padding:0px !important;" class="nav-item nav-link dropdown-toggle text-secondary" data-toggle="dropdown"><img src='assets/img/user.png' style="width:100%;  height:auto;" /> </a>
+                        </div>
+                     </li>
+                     <li class="nav-item dropdown">
+                        <div class="nav-dropdown">
+                           <a href="" class="nav-item nav-link dropdown-toggle text-secondary" data-toggle="dropdown"><span>Welcome Admin</span> <i style="font-size: .8em;" class="fas fa-caret-down"></i></a>
+                           <div class="dropdown-menu dropdown-menu-right nav-link-menu">
+                              <ul class="nav-list">
+                                 <li><a href="edit-profile.html" class="dropdown-item"><i class="fas fa-address-card"></i> My Profile</a></li>
+                                 <li><a href="" class="dropdown-item"><i class="fas fa-envelope"></i> My Location</a></li>
+                                 <div class="dropdown-divider"></div>
+                                 <li><a href="" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </nav>
+            <div class="content">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-12 overtext">
+                        <h5>Overview</h5>
+                     </div>
+                  </div>
+                  <div class="row row-flex">
+                     <div class="col-md-9 col-sm-12">
+                        <div class="row">
+                           <div class="col-md-3">
+                              <div class="card p-2 cardhead">
+                                 <h3><b>50</b></h3>
+                                 <h6>Total orders placed</h6>
+                              </div>
+                           </div>
+                           <div class="col-md-3">
+                              <div class="card ml-2 p-2 cardhead">
+                                 <h3><b>35</b></h3>
+                                 <h6>Orders completed</h6>
+                              </div>
+                           </div>
+                           <div class="col-md-3 ">
+                              <div class="card ml-2 p-2 cardhead">
+                                 <h3><b>10</b></h3>
+                                 <h6>orders pending</h6>
+                              </div>
+                           </div>
+                           <div class="col-md-3">
+                              <div class="card p-2 cardhead">
+                                 <h3><b>5</b></h3>
+                                 <h6>orders in progress</h6>
+                              </div>
+                           </div>
+                        </div>
+                        <!--chart box-->
+                        <div class="row ">
+                           <div class="col-md-12 col-xs-12">
+                              <div class="card">
+                                 <div class="card-body">
+                                    <p class="card-title"></p>
+                                    <div class="canvas-wrapper">
+                                       <canvas class="chart" id="barchart"></canvas>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-12">
+                              <div class="card">
+                                 <div class="card-head  p-2">
+                                    <div class="tablehead">
+                                       <div>
+                                          <h5 style="color:#000;">Recent Orders</h5>
+                                       </div>
+                                       <div class="orderdiv">
+                                          <div class="nav-dropdown">
+                                             <a href="" class="nav-item nav-link dropdown-toggle text-secondary" data-toggle="dropdown"><span><img src="assets/img/filtericon.png"  width="20px" height="20px"/></span> <i style="font-size: .8em;" class="fas fa-caret-down"></i></a>
+                                          </div>
+                                          <div class="row align-items-baseline">
+                                             <div class="col-md-6">
+                                                <p class="text-center" style="color:#000;">Sort By:</p>
+                                             </div>
+                                             <div class="col-md-6">
+                                                <div class="form-group">
+                                                   <select class="form-control" id="sel1" class="w-100">
+                                                      <option>Select</option>
+                                                      <option>Ascending order</option>
+                                                      <option>Descending order</option>
+                                                   </select>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="table-responsive">
+                                    <table class="table table-striped" cellspacing="1" width="100%" >
+                                       <thead class="thead-dark">
+                                          <tr>
+                                             <th><span>Order Id</span></th>
+                                             <th><span>Order Date</span></th>
+                                             <th><span>Supplier Information</span></th>
+                                             <th><span>Delivery Address</span> </th>
+                                             <th><span>Order status</span></th>
+                                          </tr>
+                                       </thead>
+                                       <!-- </table>
+                                          <div style="height: 300px; overflow-y: auto">
+                                              <table class="table table-borderless " cellspacing="1" width="100%" > -->
+                                       <tbody>
+                                          <tr>
+                                             <td>200160</td>
+                                             <td>21-feb-2021</td>
+                                             <td>ABC Technologie pvt Limited Headoffice</td>
+                                             <td>food court pvt limited</td>
+                                             <td>IN-PROCESS</td>
+                                          </tr>
+                                          <tr>
+                                             <td>200160</td>
+                                             <td>21-feb-2021</td>
+                                             <td>ABC Technologie pvt Limited Headoffice</td>
+                                             <td>food court pvt limited</td>
+                                             <td>IN-PROCESS</td>
+                                          </tr>
+                                          <tr>
+                                             <td>200160</td>
+                                             <td>21-feb-2021</td>
+                                             <td>ABC Technologie pvt Limited Headoffice</td>
+                                             <td>food court pvt limited</td>
+                                             <td>IN-PROCESS</td>
+                                          </tr>
+                                          <tr>
+                                             <td>200160</td>
+                                             <td>21-feb-2021</td>
+                                             <td>ABC Technologie pvt Limited Headoffice</td>
+                                             <td>food court pvt limited</td>
+                                             <td>IN-PROCESS</td>
+                                          </tr>
+                                          <tr>
+                                             <td>200160</td>
+                                             <td>21-feb-2021</td>
+                                             <td>ABC Technologie pvt Limited Headoffice</td>
+                                             <td>food court pvt limited</td>
+                                             <td>IN-PROCESS</td>
+                                          </tr>
+                                          <tr>
+                                             <td>200160</td>
+                                             <td>21-feb-2021</td>
+                                             <td>ABC Technologie pvt Limited Headoffice</td>
+                                             <td>food court pvt limited</td>
+                                             <td>IN-PROCESS</td>
+                                          </tr>
+                                          <tr>
+                                             <td>200160</td>
+                                             <td>21-feb-2021</td>
+                                             <td>ABC Technologie pvt Limited Headoffice</td>
+                                             <td>food court pvt limited</td>
+                                             <td>IN-PROCESS</td>
+                                          </tr>
+                                          <tr>
+                                             <td>200160</td>
+                                             <td>21-feb-2021</td>
+                                             <td>ABC Technologie pvt Limited Headoffice</td>
+                                             <td>food court pvt limited</td>
+                                             <td>IN-PROCESS</td>
+                                          </tr>
+                                          <tr>
+                                             <td>200160</td>
+                                             <td>21-feb-2021</td>
+                                             <td>ABC Technologie pvt Limited Headoffice</td>
+                                             <td>food court pvt limited</td>
+                                             <td>IN-PROCESS</td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-md-3 col-sm-12">
+                        <div class="row align-items-baseline mb-5 pb-3">
+                           <div class="col-md-4 searchtext">
+                              <h5>Search:</h5>
+                           </div>
+                           <div class="col-md-8">
+                              <div class="input-group rounded">
+                                 <input type="search" class="form-control rounded"  aria-label="Search"
+                                    aria-describedby="search-addon" />
+                                 <span class="input-group-text border-0" id="search-addon">
+                                 <i class="fas fa-search"></i>
+                                 </span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col=md-12 mt-5">
+                           <div class="card p-2">
+                              <div class="borbot">
+                                 <h4>Message Center</h4>
+                              </div>
+                              <div class="borbot">
+                                 <p>Message Center is a web-based console that lets you view and manage messages quarantined as spam. Depending on the settings the administrator selects, Message Center can also include a list of messages delivered to your non-Gmail inbox.</p>
+                              </div>
+                              <div class="borbot">
+                                 <p>Message Center is a web-based console that lets you view and manage messages quarantined as spam. Depending on the settings the administrator selects, Message Center can also include a list of messages delivered to your non-Gmail inbox.</p>
+                              </div>
+                              <div class="borbot">
+                                 <p>Message Center is a web-based console that lets you view and manage messages quarantined as spam. Depending on the settings the administrator selects, Message Center can also include a list of messages delivered to your non-Gmail inbox.</p>
+                              </div>
+                              <div class="borbot">
+                                 <p>Message Center is a web-based console that lets you view and manage messages quarantined as spam. Depending on the settings the administrator selects, Message Center can also include a list of messages delivered to your non-Gmail inbox.</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+
+            </div>
+
+
+
+
+         </div>
+      </div>
+      <script src="assets/vendor/jquery/jquery.min.js"></script>
+      <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="assets/vendor/chartsjs/Chart.min.js"></script>
+      <script src="assets/js/charts.js"></script>
+      <script src="assets/js/script.js"></script>
+      <script type="text/javascript">
+         $(function() {
+             // this will get the full URL at the address bar
+             var url = window.location.href;
+
+             // passes on every "a" tag
+             $("#sidebar a").each(function() {
+                 // checks if its the same on the address bar
+                 if (url == (this.href)) {
+                     $(this).closest("li").addClass("active1");
+                     //for making parent of submenu active
+                    $(this).closest("li").parent().parent().addClass("active1");
+                 }
+             });
+         });
+      </script>
+   </body>
+</html>
